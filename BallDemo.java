@@ -29,7 +29,7 @@ public class BallDemo
         int ground = 400;   // position of the ground line
 
         myCanvas.setVisible(true);
-        
+
         misBolas = new BouncingBall[numeroBolas];
         // draw the ground
         myCanvas.drawLine(50, ground, 550, ground);
@@ -42,17 +42,19 @@ public class BallDemo
         }
 
         // make them bounce
-        /**
+
         boolean finished =  false;
         while(!finished) {
-        myCanvas.wait(50);           // small delay
-        ball.move();
-        ball2.move();
-        // stop once ball has travelled a certain distance on x axis
-        if(ball.getXPosition() >= 550 || ball2.getXPosition() >= 550) {
-        finished = true;
+            myCanvas.wait(50);           // small delay
+            for(int i = 0; i < numeroBolas; i++){
+                misBolas[i].move();
+                if(misBolas[i].getXPosition() >= 550){
+                    finished = true;
+                }
+            }
+            // stop once ball has travelled a certain distance on x axis
+            
         }
-        }
-         */
+
     }
 }
